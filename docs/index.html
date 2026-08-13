@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#1d4ed8">
+  <link rel="canonical" href="https://peterponyu.github.io/SPGD-site/">
+  <title>SPGD — spot composition, not a leaderboard</title>
+  <meta name="description" content="Training-free spatial deconvolution companion: spot-level cell-type composition across platform, compartment, and donor. Archive DOI 10.5281/zenodo.21869991.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="preview-banner">
+    <strong>Preview.</strong> Local GitHub Pages leaf — not deployed. Site badge stays off until HTTP 200.
+  </div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="wordmark" href="#home">SPGD <span>spots</span></a>
+      <nav class="nav-ia" aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#abstract">Abstract</a>
+        <a href="#figures">Figures</a>
+        <a href="#code">Code</a>
+        <a href="#cite">Cite</a>
+      </nav>
+      <div class="chrome-links">
+        <a class="chrome-link" href="https://peterponyu.github.io/" rel="noopener noreferrer">Homepage</a>
+        <a class="chrome-link" href="https://peterponyu.github.io/scportal/" rel="noopener noreferrer">SCPortal</a>
+        <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-panel" aria-label="Open menu">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-panel" id="mobile-panel" aria-hidden="true">
+      <a href="#home" data-ia>Home</a>
+      <a href="#abstract" data-ia>Abstract</a>
+      <a href="#figures" data-ia>Figures</a>
+      <a href="#code" data-ia>Code</a>
+      <a href="#cite" data-ia>Cite</a>
+      <a href="https://peterponyu.github.io/" rel="noopener noreferrer">Homepage</a>
+      <a href="https://peterponyu.github.io/scportal/" rel="noopener noreferrer">SCPortal</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero fade-in" id="home">
+      <div>
+        <p class="kicker">ZF Lab · spatial deconvolution <span class="venue">· Computational Biology and Chemistry</span></p>
+        <h1>Spot composition across platform, compartment, and donor</h1>
+        <p class="lead">
+          SPGD estimates the cell-type mix inside each spatial spot. The object that moves is that mix —
+          imaging platform, tissue compartment, mixing regime, donor — not a rank table on the same mixtures.
+        </p>
+        <div class="trust-row" aria-label="Trust signals">
+          <span class="chip chip-lock">DestVI STARmap RMSE 0.203 lock</span>
+          <span class="chip chip-ok">No method dominates</span>
+          <span class="chip chip-warn">Tiny ΔRMSE is a practical zero</span>
+        </div>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#abstract">Read the abstract</a>
+          <a class="btn btn-ghost" href="#figures">Browse figures</a>
+          <a class="btn btn-ghost" href="https://doi.org/10.5281/zenodo.21869991" rel="noopener noreferrer">Zenodo archive</a>
+        </div>
+        <article class="paper-card">
+          <span class="disc" aria-hidden="true">1</span>
+          <div>
+            <h2>A training-free, self-gating deconvolution method is competitive with default state-of-the-art under a zero-tuning budget across same- and cross-platform spatial transcriptomics</h2>
+            <p class="meta"><strong>Fu, Z.</strong> · <em>Computational Biology and Chemistry</em> (intended venue)</p>
+            <div class="badge-row">
+              <a class="badge badge-archive" href="https://doi.org/10.5281/zenodo.21869991" rel="noopener noreferrer">Archive DOI</a>
+              <span class="badge badge-disabled" title="Public HTTPS GitHub is not available. Use Zenodo.">Code</span>
+              <span class="badge badge-disabled" title="Site badge after Pages HTTP 200.">Site</span>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div>
+        <div class="stat-grid compact">
+          <div class="stat-tile">
+            <strong>3</strong>
+            <span>Platforms: <span class="mono">openST</span>, <span class="mono">MERFISH</span>, <span class="mono">STARmap</span></span>
+          </div>
+          <div class="stat-tile">
+            <strong>8</strong>
+            <span>Substrates spanning same-platform, cross-platform, simulation, real-GT, and cross-donor</span>
+          </div>
+          <div class="stat-tile">
+            <strong>3</strong>
+            <span>Compartments on real tissue: tumor · stroma · macrophage</span>
+          </div>
+          <div class="stat-tile">
+            <strong>2</strong>
+            <span>Donors on CosMx skin/BCC: spots from one patient, reference from another</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <figure class="spatial-map-frame">
+      <div class="map-toolbar">
+        <span class="frame-label">SpatialMapFrame</span>
+        <span class="chip platform-chip">realgt</span>
+        <span class="chip platform-chip">Xenium ref.</span>
+        <span class="chip platform-chip">spot mix</span>
+        <div class="compartment-legend" aria-label="Compartment legend">
+          <span class="legend-item"><span class="swatch swatch-tumor" aria-hidden="true"></span>Invasive tumor PCC 0.91</span>
+          <span class="legend-item"><span class="swatch swatch-stroma" aria-hidden="true"></span>Stromal PCC 0.84</span>
+          <span class="legend-item"><span class="swatch swatch-macro" aria-hidden="true"></span>Macrophage PCC 0.55</span>
+        </div>
+      </div>
+      <img src="figures/fig_spatial.png" alt="Four-panel spatial maps: ground truth versus SPGD for invasive tumor, stromal, and macrophage spot proportions, plus a per-spot PCC bar chart." width="1384" height="1192">
+      <figcaption>
+        Real-tissue spot composition. (A) Invasive tumor proportions, ground truth versus SPGD.
+        (B) Stromal. (C) Macrophage. (D) Per-spot concordance 0.91 / 0.84 / 0.55.
+        Each map panel shares a within-type scale; the legend names compartments rather than relying on colour alone.
+      </figcaption>
+    </figure>
+
+    <section class="stack" aria-labelledby="routes-title">
+      <p class="section-kicker">The journey</p>
+      <h2 class="section-title" id="routes-title">Pick a route through the paper</h2>
+      <div class="route-grid">
+        <a class="route-card" href="#abstract">
+          <span class="disc disc-lg">01</span>
+          <div>
+            <h3>Abstract</h3>
+            <p>Competitive, not dominant: three losses in forty comparisons, never a universal win.</p>
+          </div>
+        </a>
+        <a class="route-card" href="#figures">
+          <span class="disc disc-lg">02</span>
+          <div>
+            <h3>Figures</h3>
+            <p>Maps first. Platform, donor, and rare-type objects next. Scores on the same mixtures last.</p>
+          </div>
+        </a>
+        <a class="route-card" href="#code">
+          <span class="disc disc-lg">03</span>
+          <div>
+            <h3>Code</h3>
+            <p>Zenodo until a public HTTPS remote exists. The private workbench is not a badge.</p>
+          </div>
+        </a>
+        <a class="route-card" href="#cite">
+          <span class="disc disc-lg">04</span>
+          <div>
+            <h3>Cite</h3>
+            <p>Manuscript stub plus archive DOI. No invented Editorial Manager ID.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="stack" id="abstract">
+      <p class="section-kicker">Standalone</p>
+      <h2 class="section-title">Abstract</h2>
+      <div class="prose">
+        <p>
+          We build a pre-specified design-log benchmark for spatial-transcriptomics cell-type deconvolution spanning
+          same-platform, cross-platform, and simulated assays, three co-registered real-ground-truth references, and a
+          separate cross-donor replication (eight substrates total; seven in the primary 42-cell rank pool). Thirteen
+          methods are scored on six metrics with bootstrap confidence intervals and paired descriptive tests. SPGD is a
+          specificity-weighted, Poisson, self-gating, platform-corrected non-negative estimator that is training-free,
+          GPU-free, and free of dataset-specific tuning (algorithmic constants fixed a priori). Under a shared
+          zero-tuning budget against a ten-method SOTA panel, SPGD wins most paired comparisons and loses three of forty
+          controlled comparisons—to cell2location and DestVI on MERFISH and scaden on the simulation—with further
+          losses on real skin. Panel caveats matter: SPOTlight trails trivial baselines (mean rank 16.12 of 17), and
+          Stereoscope collapses on STARmap (RMSE 0.338). Cell2location’s MERFISH edge localizes to a near-collinear
+          neuronal pair (r = 0.83); specificity weighting recovers about half that gap. DestVI also wins MERFISH and
+          leads on skin but is fragile cross-platform (worst-case rank 11 on STARmap). SPGD is the most consistent method
+          overall at roughly 100–400× lower cost. Per-type ranks are reference-dependent: rank-4 on the
+          307-gene Xenium reference (realgt) but rank-2 on an orthogonal whole-transcriptome scFFPE reference (realgt2)
+          with the same ground truth. No single method dominates; linear-baseline platform-shift failure is
+          substrate-specific and did not replicate out of sample; SPOTlight failed on all substrates under our default
+          runner.
+        </p>
+      </div>
+    </section>
+
+    <section class="stack" id="figures">
+      <p class="section-kicker">Maps first</p>
+      <h2 class="section-title">Figures</h2>
+      <p class="lead figures-lead">
+        The physical object is the spot mix. Rank, runtime, and calibration width are scores on the same mixtures.
+      </p>
+      <div class="figure-grid">
+        <figure class="figure-card span-2">
+          <div class="figure-head">
+            <h2>Real-tissue maps</h2>
+            <span class="tag tag-object">object · compartment</span>
+          </div>
+          <img src="figures/fig_spatial.png" alt="Same four-panel spatial validation as the home map: tumor, stroma, macrophage, and PCC bars." width="1384" height="1192">
+          <figcaption>
+            Ground truth versus SPGD on realgt spots. Tumor and stroma keep their spatial pattern;
+            macrophage recovery is coarser and is shown rather than hidden.
+          </figcaption>
+        </figure>
+        <figure class="figure-card">
+          <div class="figure-head">
+            <h2>Cross-donor mix</h2>
+            <span class="tag tag-object">object · donor</span>
+          </div>
+          <img src="figures/fig_crossdonor.png" alt="Four-panel cross-donor replication: RMSE, per-type PCC, per-spot PCC, and within- versus cross-donor comparison." width="1046" height="847">
+          <figcaption>
+            CosMx skin/BCC: spots from one patient, reference from another. SPGD is rank-1 on per-type correlation (0.771)
+            and rank-4 on RMSE (0.115). The ranking is not a single-donor artifact.
+          </figcaption>
+        </figure>
+        <figure class="figure-card">
+          <div class="figure-head">
+            <h2>Rare-type mix</h2>
+            <span class="tag tag-object">object · mixing regime</span>
+          </div>
+          <img src="figures/fig_rare.png" alt="Rare-type recovery bars on simulation versus real ground truth for PCC and AUPRC." width="1046" height="847">
+          <figcaption>
+            Simulated rare types versus real-GT rare types. SPGD leads the simulation panels;
+            on harder real-tissue rare types it is mid-pack. Mixing regime changes the object.
+          </figcaption>
+        </figure>
+      </div>
+
+      <p class="section-kicker stack-kicker">Scores on the same mixtures</p>
+      <h2 class="section-title">Not the biology</h2>
+      <p class="note theater-note">
+        <span class="tag tag-theater">ScoreTheater</span>
+        These panels keep the mixtures fixed and change the score: RMSE, interval width, wall-clock.
+        They are evidence, not tissue. iid spot-bootstrap intervals are not a spatial-uncertainty statement.
+      </p>
+      <div class="figure-grid">
+        <figure class="figure-card">
+          <div class="figure-head">
+            <h2>Platform RMSE</h2>
+            <span class="tag tag-theater">ScoreTheater</span>
+          </div>
+          <img src="figures/fig_leaderboard.png" alt="RMSE leaderboards for openST, MERFISH, and STARmap, plus mean rank across 42 cells." width="1046" height="847">
+          <figcaption>
+            Same- and cross-platform RMSE under a shared zero-tuning budget.
+            DestVI and cell2location win MERFISH; DestVI STARmap RMSE is locked at 0.203.
+            Mean rank is a summary of scores, not a change in composition.
+          </figcaption>
+        </figure>
+        <figure class="figure-card">
+          <div class="figure-head">
+            <h2>Calibration width</h2>
+            <span class="tag tag-theater">ScoreTheater</span>
+          </div>
+          <img src="figures/fig_calibration.png" alt="Calibration coverage and interval width bars at nominal 90 percent coverage." width="1046" height="847">
+          <figcaption>
+            Split-conformal intervals at nominal 90% coverage. Methods sit near the same coverage;
+            width is a sharpness score on the same spots, not a new tissue map.
+          </figcaption>
+        </figure>
+        <figure class="figure-card span-2">
+          <div class="figure-head">
+            <h2>Runtime</h2>
+            <span class="tag tag-theater">ScoreTheater</span>
+          </div>
+          <img src="figures/fig_runtime.png" alt="Runtime, slowdown versus SPGD, and accuracy-cost frontier." width="1046" height="847">
+          <figcaption>
+            SPGD median wall-clock is 3 seconds (NNLS-level). DestVI, cell2location, and related
+            probabilistic methods cost roughly 100–400× more. Cost is not composition.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="stack" id="code">
+      <p class="section-kicker">Reproducibility</p>
+      <h2 class="section-title">Code</h2>
+      <div class="card empty-code">
+        <p>
+          No public HTTPS GitHub remote for this leaf. The experimental workbench is private and is not linked here.
+        </p>
+        <p class="empty-code-sub">
+          Use the Zenodo archive until a public repository exists. Do not treat a 404 Pages URL as a Site badge.
+        </p>
+        <div class="badge-row">
+          <a class="badge badge-archive" href="https://doi.org/10.5281/zenodo.21869991" rel="noopener noreferrer">Zenodo 10.5281/zenodo.21869991</a>
+          <span class="badge badge-disabled">Code — not public yet</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="stack" id="cite">
+      <p class="section-kicker">Citation</p>
+      <h2 class="section-title">Cite</h2>
+      <p class="cite-note">
+        Manuscript companion. Archive DOI only — no article DOI and no Editorial Manager ID.
+      </p>
+      <div class="cite-block">
+        <pre id="bibtex">@unpublished{fu2026spgd,
+  author = {Fu, Zeyu},
+  title  = {A training-free, self-gating deconvolution method is competitive with default state-of-the-art under a zero-tuning budget across same- and cross-platform spatial transcriptomics},
+  year   = {2026},
+  note   = {Manuscript companion. Archive DOI: 10.5281/zenodo.21869991},
+  doi    = {10.5281/zenodo.21869991}
+}</pre>
+      </div>
+      <div class="cta-row cite-actions">
+        <button class="btn btn-primary" type="button" data-copy="#bibtex">Copy BibTeX</button>
+        <span class="toast" id="copy-status" aria-live="polite"></span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <h2>SPGD</h2>
+        <p>ZF Lab paper leaf. Spot composition across platform, compartment, and donor.</p>
+        <p>Zeyu Fu · ORCID <a class="footer-link" href="https://orcid.org/0009-0001-8329-0108" rel="noopener noreferrer">0009-0001-8329-0108</a></p>
+      </div>
+      <div>
+        <h2>Browse</h2>
+        <ul>
+          <li><a class="footer-link" href="#abstract">Abstract</a></li>
+          <li><a class="footer-link" href="#figures">Figures</a></li>
+          <li><a class="footer-link" href="#code">Code</a></li>
+          <li><a class="footer-link" href="#cite">Cite</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Graph</h2>
+        <ul>
+          <li><a class="footer-link" href="https://peterponyu.github.io/" rel="noopener noreferrer">Homepage</a></li>
+          <li><a class="footer-link" href="https://peterponyu.github.io/scportal/" rel="noopener noreferrer">SCPortal</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Archive</h2>
+        <ul>
+          <li><a class="footer-link" href="https://doi.org/10.5281/zenodo.21869991" rel="noopener noreferrer">Zenodo</a></li>
+          <li><a class="footer-link" href="https://github.com/PeterPonyu" rel="noopener noreferrer">GitHub profile</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/site.js"></script>
+</body>
+</html>
