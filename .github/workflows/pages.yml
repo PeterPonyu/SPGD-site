@@ -17,7 +17,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  NEXT_PUBLIC_BASE_PATH: /b1-site
+  NEXT_PUBLIC_BASE_PATH: /SPGD-site
 
 jobs:
   build:
