@@ -1,7 +1,8 @@
+import FigurePanel from '@/components/FigurePanel';
 import { ClaimBlock } from '@/components/PageShell';
 import RouteCards from '@/components/RouteCards';
 import StatTile from '@/components/StatTile';
-import { SITE, STATS } from '@/lib/site';
+import { HERO_FIGURE, SITE, STATS } from '@/lib/site';
 
 export default function HomePage() {
   return (
@@ -11,6 +12,10 @@ export default function HomePage() {
       </p>
       <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-900">{SITE.title}</h1>
       <p className="mt-4 max-w-3xl text-lg text-slate-700">{SITE.lead}</p>
+
+      <section className="mt-8" aria-label="Spatial map hero">
+        <FigurePanel src={HERO_FIGURE.src} alt={HERO_FIGURE.alt} caption={HERO_FIGURE.caption} />
+      </section>
 
       <div className="mt-8 grid gap-4 sm:grid-cols-3">
         {STATS.map((tile) => (

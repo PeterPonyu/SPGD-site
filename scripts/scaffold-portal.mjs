@@ -93,6 +93,8 @@ export const ROUTES = [
 
 export const STATS = ${JSON.stringify(cfg.stats, null, 2)} as const;
 
+export const HERO_FIGURE = ${cfg.heroFigure ? JSON.stringify(cfg.heroFigure) : 'null'} as const;
+
 export const RESULTS_FIGURES = ${JSON.stringify(cfg.resultsFigures, null, 2)} as const;
 
 export const EVIDENCE_TILES = ${JSON.stringify(cfg.evidenceTiles, null, 2)} as const;
@@ -105,10 +107,11 @@ export const CLAIMS = ${JSON.stringify(cfg.claims, null, 2)} as const;
 
 writeFileSync(
   join(targetDir, 'src/app/page.tsx'),
-  `import { ClaimBlock } from '@/components/PageShell';
+  `import FigurePanel from '@/components/FigurePanel';
+import { ClaimBlock } from '@/components/PageShell';
 import RouteCards from '@/components/RouteCards';
 import StatTile from '@/components/StatTile';
-import { SITE, STATS } from '@/lib/site';
+import { HERO_FIGURE, SITE, STATS } from '@/lib/site';
 
 export default function HomePage() {
   return (
@@ -118,6 +121,12 @@ export default function HomePage() {
       </p>
       <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-900">{SITE.title}</h1>
       <p className="mt-4 max-w-3xl text-lg text-slate-700">{SITE.lead}</p>
+
+      {HERO_FIGURE && (
+        <section className="mt-8" aria-label="Spatial map hero">
+          <FigurePanel src={HERO_FIGURE.src} alt={HERO_FIGURE.alt} caption={HERO_FIGURE.caption} />
+        </section>
+      )}
 
       <div className="mt-8 grid gap-4 sm:grid-cols-3">
         {STATS.map((tile) => (
@@ -251,6 +260,7 @@ writeFileSync(
 writeFileSync(
   join(targetDir, 'src/components/FigurePanel.tsx'),
   `import Image from 'next/image';
+import { withBase } from '@/lib/base-path';
 
 export default function FigurePanel({
   src,
@@ -263,7 +273,7 @@ export default function FigurePanel({
 }) {
   return (
     <figure className="overflow-hidden rounded-2xl border border-slate-200 bg-white/80">
-      <Image src={src} alt={alt} width={1600} height={900} className="h-auto w-full" unoptimized />
+      <Image src={withBase(src)} alt={alt} width={1600} height={900} className="h-auto w-full" unoptimized />
       <figcaption className="border-t border-slate-100 px-5 py-4 text-sm text-slate-600">
         {caption}
       </figcaption>
@@ -314,7 +324,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
-      - uses: actions/setup-node@49933ea5288caeca8642d29e6ab316508ebc106b
+      - uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: npm

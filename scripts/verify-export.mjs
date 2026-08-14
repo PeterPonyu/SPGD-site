@@ -53,6 +53,18 @@ function walk(dir) {
 
 if (existsSync(out)) {
   walk(out);
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+  if (basePath) {
+    // G10: media asset URLs must carry the Pages basePath (next/image
+    // unoptimized does not apply it; missing prefix 404s on project Pages).
+    for (const rel of required.filter((r) => r.endsWith('.html'))) {
+      const html = readFileSync(join(out, rel), 'utf8');
+      if (/src="\/media\//.test(html)) {
+        console.error(`FAIL G10: unprefixed /media/ src in out/${rel} (expected ${basePath}/media/…)`);
+        failed += 1;
+      }
+    }
+  }
   const html = readFileSync(join(out, 'index.html'), 'utf8');
   if (/github\.com\/PeterPonyu\/HetCLOP/i.test(html)) {
     console.error('FAIL G6: private HetCLOP Code href in index.html');

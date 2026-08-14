@@ -125,6 +125,8 @@ export const SITE_CONFIGS = {
     archiveDoi: '10.5281/zenodo.21869991',
     siteUrl: 'https://peterponyu.github.io/SPGD-site/',
     mediaSource: 'capsules/spgd-deconv/docs/figures',
+    heroFigure:
+      { src: '/media/fig_spatial.png', alt: 'Spatial maps of tumor stroma macrophage proportions', caption: 'Spatial maps — tumor · stroma · macrophage on real tissue.' },
     stats: [
       { value: '3', label: 'platforms: openST, MERFISH, STARmap' },
       { value: '8', label: 'substrates · same/cross-platform · simulation · donor' },

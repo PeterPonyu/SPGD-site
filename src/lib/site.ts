@@ -65,6 +65,12 @@ export const STATS = [
   }
 ] as const;
 
+export const HERO_FIGURE = {
+  "src": "/media/fig_spatial.png",
+  "alt": "Spatial maps of tumor stroma macrophage proportions",
+  "caption": "Spatial maps — tumor · stroma · macrophage on real tissue."
+} as const;
+
 export const RESULTS_FIGURES = [
   {
     "src": "/media/fig_spatial.png",
