@@ -11,7 +11,7 @@ f:I[4431,[],"ViewportBoundary"]
 11:I[4431,[],"MetadataBoundary"]
 12:"$Sreact.suspense"
 5:["$","div","tumor / stroma / macrophage PCC",{"className":"rounded-2xl border border-slate-200 bg-white/80 p-5","children":[["$","strong",null,{"className":"block font-mono text-2xl text-brand","children":"0.91 / 0.84 / 0.55"}],["$","span",null,{"className":"mt-1 block text-sm text-slate-600","children":"tumor / stroma / macrophage PCC"}]]}]
-6:["$","div","controlled paired losses vs SOTA panel",{"className":"rounded-2xl border border-slate-200 bg-white/80 p-5","children":[["$","strong",null,{"className":"block font-mono text-2xl text-brand","children":"3/40"}],["$","span",null,{"className":"mt-1 block text-sm text-slate-600","children":"controlled paired losses vs SOTA panel"}]]}]
+6:["$","div","controlled paired losses vs comparison panel",{"className":"rounded-2xl border border-slate-200 bg-white/80 p-5","children":[["$","strong",null,{"className":"block font-mono text-2xl text-brand","children":"3/40"}],["$","span",null,{"className":"mt-1 block text-sm text-slate-600","children":"controlled paired losses vs comparison panel"}]]}]
 7:["$","div","dataset-specific tuning knobs",{"className":"rounded-2xl border border-slate-200 bg-white/80 p-5","children":[["$","strong",null,{"className":"block font-mono text-2xl text-brand","children":"0"}],["$","span",null,{"className":"mt-1 block text-sm text-slate-600","children":"dataset-specific tuning knobs"}]]}]
 8:["$","$Lb",null,{"children":["$Lc",["$","$Ld",null,{"promise":"$@e"}]]}]
 9:["$","$1","h",{"children":[null,[["$","$Lf",null,{"children":"$L10"}],null],["$","$L11",null,{"children":["$","div",null,{"hidden":true,"children":["$","$12",null,{"fallback":null,"children":"$L13"}]}]}]]}]

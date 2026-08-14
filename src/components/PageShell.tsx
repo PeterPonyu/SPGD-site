@@ -28,7 +28,7 @@ export function ClaimBlock() {
       <h2 className="text-lg font-semibold text-slate-900">Primary claim</h2>
       <p className="mt-3 text-slate-700">{SITE.primaryClaim}</p>
       <p className="mt-4 text-sm text-slate-500">
-        Scope: unpublished results site. Refutation hooks belong on the Claims route.
+        Scope: research code / results site. Refutation hooks belong on the Claims route.
       </p>
     </section>
   );

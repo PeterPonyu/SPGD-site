@@ -8,7 +8,7 @@ export const SITE = {
   kicker: "ZF Lab · spatial deconvolution",
   lead: "SPGD estimates the cell-type mix inside each spatial spot. The object that moves is that mix — imaging platform, tissue compartment, mixing regime, donor — not a rank table on the same mixtures.",
   physicalObject: "Spot-level cell-type composition across openST, MERFISH, and STARmap substrates.",
-  primaryClaim: "Under a zero-tuning budget SPGD is competitive with default SOTA on spatial maps — no method dominates across platform, compartment, and donor axes.",
+  primaryClaim: "Spot-level composition error (RMSE) and spatial-map concordance vary by platform, compartment, and donor — no method dominates all three axes under a shared zero-tuning budget.",
   homepage: 'https://peterponyu.github.io/',
   scportal: 'https://peterponyu.github.io/scportal/',
 } as const;
@@ -96,7 +96,7 @@ export const EVIDENCE_TILES = [
   },
   {
     "value": "3/40",
-    "label": "controlled paired losses vs SOTA panel"
+    "label": "controlled paired losses vs comparison panel"
   },
   {
     "value": "0",
@@ -104,11 +104,11 @@ export const EVIDENCE_TILES = [
   }
 ] as const;
 
-export const METHODS_SUMMARY = "Specificity-weighted Poisson self-gating estimator with platform correction. Thirteen methods on eight substrates with bootstrap CIs. Algorithmic constants fixed a priori — training-free, GPU-free, zero-tuning budget versus default SOTA configs." as const;
+export const METHODS_SUMMARY = "Specificity-weighted Poisson self-gating estimator with platform correction. Thirteen methods on eight substrates with bootstrap CIs. Algorithmic constants fixed a priori — training-free, GPU-free, zero-tuning budget versus default comparison configs." as const;
 
 export const CLAIMS = [
   {
-    "claim": "SPGD wins most paired comparisons and loses a bounded set on MERFISH and simulation.",
+    "claim": "Composition RMSE and spatial-map concordance, not leaderboard rank, are the measured objects. A bounded set of paired losses occurs on MERFISH and simulation.",
     "scope": "42-cell rank pool · six metrics · bootstrap CIs.",
     "refutation": "Show a single method dominates all substrates under the same zero-tuning budget."
   },

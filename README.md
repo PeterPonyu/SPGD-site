@@ -1,6 +1,6 @@
 # SPGD-site
 
-Science gateway (Next.js static export) for unpublished results.
+Science gateway (Next.js static export) for research code / results.
 
 - Live: https://peterponyu.github.io/SPGD-site/
 - IA: Home / Results / Methods / Evidence / Claims
