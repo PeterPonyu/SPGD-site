@@ -1,4 +1,5 @@
 import { badgeEntries } from '@/lib/badges';
+import { withBase } from '@/lib/base-path';
 import { ROUTES, SITE } from '@/lib/site';
 
 export default function FooterSitemap() {
@@ -8,7 +9,7 @@ export default function FooterSitemap() {
         <span className="font-medium text-slate-700">{SITE.title}</span>
         <div className="flex min-w-0 flex-wrap items-center gap-x-4 gap-y-1">
           {ROUTES.map((route) => (
-            <a key={route.href} href={route.href} className="transition-colors hover:text-teal-600">
+            <a key={route.href} href={withBase(route.href)} className="transition-colors hover:text-teal-600">
               {route.label}
             </a>
           ))}
