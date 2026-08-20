@@ -22,3 +22,29 @@ agent-transcripts/
 .idea/
 .DS_Store
 *.swp
+
+# Human-subject sperm-bank data — never commit (identifiable donor records)
+spermdata/
+**/spermdata/
+**/harmonized_donor_samples.csv
+**/donor_exposure*.csv
+**/xiamen_exposure*.csv
+
+# --- security-audit: secrets, agent state, clinical/bulk data ---
+secrets.env
+credentials.json
+*.pem
+*.key
+id_rsa
+.npmrc
+.netrc
+.agent/
+.aider*
+.continue/
+.windsurf/
+*.h5ad
+/submission/
+
+# Unpublished figures — do not re-track on this public leaf
+public/media/
+docs/media/

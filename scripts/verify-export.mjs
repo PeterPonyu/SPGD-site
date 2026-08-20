@@ -80,6 +80,14 @@ if (existsSync(out)) {
     console.error('FAIL G7: product headline pattern in index.html');
     failed += 1;
   }
+  if (/0\.203|unpublished results|SOTA/i.test(html)) {
+    console.error('FAIL G11: unpublished result / SOTA leak in index.html');
+    failed += 1;
+  }
+  if (/<img\b/i.test(html)) {
+    console.error('FAIL G12: figure img on landing export');
+    failed += 1;
+  }
 }
 
 if (failed) {

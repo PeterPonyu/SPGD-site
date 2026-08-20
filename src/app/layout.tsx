@@ -6,7 +6,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: `${SITE.title} — Science Gateway`,
-  description: SITE.lead,
+  description: SITE.landingNote,
 };
 
 export default function RootLayout({

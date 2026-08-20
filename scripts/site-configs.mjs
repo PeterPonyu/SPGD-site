@@ -58,7 +58,7 @@ export const SITE_CONFIGS = {
       { value: '0.20', label: 'binding ΔΔG Spearman overall' },
     ],
     resultsFigures: [
-      { src: '/media/F7_binding_boundary.png', alt: 'Binding boundary figure showing interface collapse', caption: 'Fig 7 — binding partner is the strongest physical break (hero).' },
+      { src: '/media/F7_binding_boundary.png', alt: 'Binding boundary figure showing interface collapse', caption: 'Fig 7 — binding-partner break on interface ΔΔG.' },
       { src: '/media/F5_stability_ddg.png', alt: 'Stability ΔΔG calibration', caption: 'Fig 5 — weak fold-stability proxy across homology hold-out.' },
       { src: '/media/F8_developability_map.png', alt: 'Antibody developability liabilities', caption: 'Fig 8 — no BH-significant polyreactivity or aggregation hits.' },
       { src: '/media/F11_boundary_atlas.png', alt: 'Synthesis boundary atlas', caption: 'Fig 11 — synthesis map, not new measurements.' },
@@ -121,32 +121,16 @@ export const SITE_CONFIGS = {
     physicalObject:
       'Spot-level cell-type composition across openST, MERFISH, and STARmap substrates.',
     primaryClaim:
-      'Spot-level composition error (RMSE) and spatial-map concordance vary by platform, compartment, and donor — no method dominates all three axes under a shared zero-tuning budget.',
+      'This public leaf describes the object only. It does not host article figures or numeric results.',
     archiveDoi: '10.5281/zenodo.21869991',
     siteUrl: 'https://peterponyu.github.io/SPGD-site/',
-    mediaSource: 'capsules/spgd-deconv/docs/figures',
-    heroFigure:
-      { src: '/media/fig_spatial.png', alt: 'Spatial maps of tumor stroma macrophage proportions', caption: 'Spatial maps — tumor · stroma · macrophage on real tissue.' },
-    stats: [
-      { value: '3', label: 'platforms: openST, MERFISH, STARmap' },
-      { value: '8', label: 'substrates · same/cross-platform · simulation · donor' },
-      { value: '0.203', label: 'DestVI STARmap RMSE lock' },
-    ],
-    resultsFigures: [
-      { src: '/media/fig_spatial.png', alt: 'Spatial maps of tumor stroma macrophage proportions', caption: 'Spatial maps — tumor · stroma · macrophage on real tissue.' },
-      { src: '/media/fig_rare.png', alt: 'Rare cell type recovery', caption: 'Rare-type mixing regimes on simulated and real ground truth.' },
-      { src: '/media/fig_crossdonor.png', alt: 'Cross-donor replication', caption: 'Donor held out — spots from one patient, reference from another.' },
-    ],
-    evidenceTiles: [
-      { value: '0.91 / 0.84 / 0.55', label: 'tumor / stroma / macrophage PCC' },
-      { value: '3/40', label: 'controlled paired losses vs comparison panel' },
-      { value: '0', label: 'dataset-specific tuning knobs' },
-    ],
+    mediaSource: '',
+    heroFigure: null,
+    stats: [],
+    resultsFigures: [],
+    evidenceTiles: [],
     methodsSummary:
-      'Specificity-weighted Poisson self-gating estimator with platform correction. Thirteen methods on eight substrates with bootstrap CIs. Algorithmic constants fixed a priori — training-free, GPU-free, zero-tuning budget versus default comparison configs.',
-    claims: [
-      { claim: 'Composition RMSE and spatial-map concordance, not leaderboard rank, are the measured objects. A bounded set of paired losses occurs on MERFISH and simulation.', scope: '42-cell rank pool · six metrics · bootstrap CIs.', refutation: 'Show a single method dominates all substrates under the same zero-tuning budget.' },
-      { claim: 'Spatial maps — not leaderboard rank — carry the biological read.', scope: 'Tumor/stroma/macrophage on real tissue; cross-donor replication.', refutation: 'Demonstrate rank-only gains without map-level concordance on the locked references.' },
-    ],
+      'This repository is the public site leaf for that object. It is not a published article and has no article DOI.',
+    claims: [],
   },
 };
