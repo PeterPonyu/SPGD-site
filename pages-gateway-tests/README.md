@@ -1,18 +1,21 @@
-# LAPS Pages gateway tests (Playwright)
+# SPGD-site Pages landing tests (Playwright)
 
-Browser policy gate for the ten LAPS GitHub Pages science gateways. Fails CI on submission packaging, marketing splash H1, missing series chrome, horizontal overflow, private GitHub hrefs, and invented article DOIs.
+Browser policy gate for **this repo's** GitHub Pages leaf only (`https://peterponyu.github.io/SPGD-site/`). It does **not** crawl sibling paper sites.
 
-## Policy (fail-closed)
+Daily cron (`30 3 * * *`) was removed: the leaf is static, push + Pages `workflow_run` already cover regressions, and the old schedule mailed failures whenever sibling chrome drifted.
+
+## Contract
 
 | Check | Rule |
 |---|---|
-| Submission packaging | No venue-intended, under review, PeerJ/JPR/JCIM/bioRxiv **as submission**, or BibTeX kits on unpublished leaves |
-| Published exception | scCCVGBen Frontiers `10.3389/fgene.2026.1822168` allowed |
-| Marketing H1 | No product splash headlines |
+| Home | HTTP 200 figure-free leaf |
+| Leak tokens | No `0.203` / `SOTA` / `unpublished` / `未发表空间图` / `fig_spatial` / `<img>` |
+| Bookmark routes | `/results/` `/methods/` `/evidence/` `/claims/` stay **200** with the same leaf copy (do not restore result pages) |
+| Retired asset | `/media/fig_spatial.png` stays **404** |
 | Chrome | Sticky header with Homepage + SCPortal |
 | Layout | No horizontal overflow on Home @ 1280 and 390 |
-| Links | No `href` to private GitHub repos that 404 anonymously |
-| DOI | No invented journal DOI; Zenodo archives OK |
+| Packaging | No venue-intended / under review / BibTeX kit |
+| Links | Public `PeterPonyu/SPGD-site`; no HetCLOP href; no invented article DOI (Zenodo OK) |
 
 ## Run locally
 
@@ -22,11 +25,3 @@ npm ci
 npx playwright install chromium
 npm test
 ```
-
-## Copy into a Pages repo
-
-1. Copy this directory to `<pages-repo>/pages-gateway-tests/`.
-2. Copy `.github/workflows/laps-gateway-tests.yml` to `<pages-repo>/.github/workflows/`.
-3. Push — workflow runs on PR/push, daily schedule, after Pages deploy, or manual dispatch.
-
-The canonical copy lives under `labs/pages-gateway-tests/`. `b1-site` hosts the live Actions run for the series.
