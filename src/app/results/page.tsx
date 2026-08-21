@@ -1,5 +1,5 @@
 import LandingLeaf from '@/components/LandingLeaf';
 
 export default function SpgdResultsPage() {
-  return <LandingLeaf title="Results" />;
+  return <LandingLeaf title="Mix" />;
 }

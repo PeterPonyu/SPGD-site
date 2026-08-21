@@ -1,7 +1,14 @@
 import PageShell from '@/components/PageShell';
+import RouteCards from '@/components/RouteCards';
 import { BADGES, SITE } from '@/lib/site';
 
-export default function LandingLeaf({ title }: { title?: string }) {
+export default function LandingLeaf({
+  title,
+  showExplore = false,
+}: {
+  title?: string;
+  showExplore?: boolean;
+}) {
   return (
     <PageShell title={title ?? SITE.title} kicker={SITE.kicker}>
       <p>{SITE.lead}</p>
@@ -9,19 +16,18 @@ export default function LandingLeaf({ title }: { title?: string }) {
       <p>{SITE.primaryClaim}</p>
       <p>{SITE.landingNote}</p>
       <p>
-        <a href={SITE.repoUrl} className="text-teal-800 underline underline-offset-2">
-          GitHub repository
-        </a>
+        <a href={SITE.repoUrl}>GitHub repository</a>
         {' · '}
-        <a
-          href={BADGES.archive.href}
-          className="text-teal-800 underline underline-offset-2"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href={BADGES.archive.href} target="_blank" rel="noopener noreferrer">
           Archive
         </a>
       </p>
+      {showExplore ? (
+        <>
+          <h2>Explore this mix</h2>
+          <RouteCards />
+        </>
+      ) : null}
     </PageShell>
   );
 }

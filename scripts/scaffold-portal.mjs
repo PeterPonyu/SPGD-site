@@ -147,7 +147,7 @@ export default function HomePage() {
 
       <section className="mt-10">
         <h2 className="mb-4 text-sm font-semibold uppercase tracking-wide text-slate-500">
-          Explore
+          Pages
         </h2>
         <RouteCards />
       </section>
@@ -378,7 +378,7 @@ writeFileSync(
   join(targetDir, 'README.md'),
   `# ${cfg.slug}
 
-Science gateway (Next.js static export) for unpublished results.
+Science gateway (Next.js static export) for research code / results.
 
 - Live: ${cfg.siteUrl}
 - IA: Home / Results / Methods / Evidence / Claims

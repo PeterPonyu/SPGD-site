@@ -1,50 +1,189 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@500&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* SPGD spot-lattice: moss tiles on pale green, circular mark. */
 :root {
-  --bg: #f8fafc;
-  --text-h: #0f172a;
-  --text: #334155;
-  --brand: #2563eb;
-  --teal: #0d9488;
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --spot-paper: #f3f7f1;
+  --spot-ink: #1f3324;
+  --spot-moss: #3f6f4e;
+  --spot-tile: #e7efe4;
+  --spot-line: #b7cbb8;
+  --font-spot: 'Source Sans 3', 'Segoe UI', sans-serif;
+  --font-spot-mono: 'IBM Plex Mono', ui-monospace, monospace;
 }
 
 @layer base {
   html {
-    font-family: var(--font-sans);
+    font-family: var(--font-spot);
   }
 
-  body {
-    background: var(--bg);
-    color: var(--text-h);
+  body.spot-lattice {
+    background:
+      radial-gradient(circle at 12px 12px, #d7e6d4 1.2px, transparent 1.4px) 0 0 / 24px 24px,
+      var(--spot-paper);
+    color: var(--spot-ink);
+    min-height: 100vh;
     overflow-x: hidden;
-  }
-
-  code,
-  pre,
-  .font-mono {
-    font-family: var(--font-mono);
   }
 }
 
-@layer utilities {
-  .card-hover {
-    transition: box-shadow 0.15s ease, transform 0.15s ease;
-  }
+.spot-head {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: #f7fbf6f0;
+  border-bottom: 2px solid var(--spot-moss);
+}
 
-  .card-hover:hover {
-    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.12);
-    transform: translateY(-1px);
-  }
+.spot-head-row {
+  margin: 0 auto;
+  max-width: 64rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.85rem 1.15rem;
+}
 
-  @media (prefers-reduced-motion: reduce) {
-    .card-hover:hover {
-      transform: none;
-    }
+.spot-mark {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  color: var(--spot-ink);
+  text-decoration: none;
+}
+
+.spot-mark-disc {
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 999px;
+  background: var(--spot-moss);
+  color: #f3f7f1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-spot-mono);
+  font-size: 0.78rem;
+}
+
+.spot-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.spot-nav a {
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--spot-moss);
+  text-decoration: none;
+}
+
+.spot-nav a.is-on {
+  background: var(--spot-moss);
+  color: #f3f7f1;
+}
+
+.spot-chips a,
+.spot-chip-off {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #4d6a52;
+  margin-left: 0.65rem;
+}
+
+.spot-chip-off {
+  opacity: 0.55;
+}
+
+.spot-wrap {
+  margin: 0 auto;
+  max-width: 44rem;
+  padding: 2rem 1.15rem 3rem;
+}
+
+.spot-kicker {
+  font-family: var(--font-spot-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--spot-moss);
+}
+
+.spot-title {
+  margin: 0.35rem 0 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.spot-body {
+  margin-top: 0.9rem;
+  line-height: 1.55;
+}
+
+.spot-body > * + * {
+  margin-top: 0.9rem;
+}
+
+.spot-grid {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 1.2rem;
+}
+
+.spot-card {
+  display: grid;
+  grid-template-columns: 2.2rem 1fr;
+  gap: 0.7rem;
+  background: var(--spot-tile);
+  border: 1px solid var(--spot-line);
+  border-radius: 1rem;
+  padding: 0.9rem 1rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.spot-num {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 999px;
+  background: var(--spot-moss);
+  color: #f3f7f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-spot-mono);
+  font-size: 0.75rem;
+}
+
+.spot-foot {
+  border-top: 1px solid var(--spot-line);
+  background: #eef6ec;
+  font-size: 0.8rem;
+  color: #4d6a52;
+}
+
+.spot-foot-row {
+  margin: 0 auto;
+  max-width: 64rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem 1rem;
+  padding: 0.8rem 1.15rem;
+}
+
+.spot-foot a {
+  color: var(--spot-moss);
+}
+
+@media (min-width: 640px) {
+  .spot-grid {
+    grid-template-columns: 1fr 1fr;
   }
 }

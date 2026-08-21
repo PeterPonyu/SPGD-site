@@ -1,5 +1,5 @@
 import LandingLeaf from '@/components/LandingLeaf';
 
 export default function SpgdMethodsPage() {
-  return <LandingLeaf title="Methods" />;
+  return <LandingLeaf title="Protocol" />;
 }

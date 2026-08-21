@@ -1,5 +1,5 @@
 import LandingLeaf from '@/components/LandingLeaf';
 
 export default function SpgdClaimsPage() {
-  return <LandingLeaf title="Claims" />;
+  return <LandingLeaf title="Limits" />;
 }

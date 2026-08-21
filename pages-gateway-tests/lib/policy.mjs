@@ -16,7 +16,7 @@ export const SUBMISSION_PACKAGING_PATTERNS = [
 export const VENUE_INTENDED_PATTERN =
   /\b(?:peerj|jpr|jcim|jcbb|mdpi|proteins|tcbb|jbhi)\s+intended\b/i;
 
-/** bioRxiv preprint cited as submission packaging — forbidden on all LAPS gateways. */
+/** bioRxiv preprint cited as submission packaging — forbidden on all science gateways. */
 export const FORBIDDEN_BIORXIV_DOI = '10.1101/2025.02.01.636000';
 
 /** Marketing / product splash H1 — not descriptive paper titles. */
